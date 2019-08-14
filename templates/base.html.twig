@@ -2,11 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% block stylesheets %}
+          {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        <link rel="stylesheet" href="https://unpkg.com/@atlaskit/css-reset@2.0.0/dist/bundle.css" media="all">
+        <script src="https://connect-cdn.atl-paas.net/all.js"></script>
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div class="container ac-content">
+            <h1>Import</h1>
+
+            <p class="lead">
+                Select a project and the date range in order to import timesheet entries as issue worklogs. This will look for issue keys in the timesheet comments and add the entries as worklog entries to the corresponding issues.
+            </p>
+
+            {% block body %}{% endblock %}
+            {% block javascripts %}
+              {{ encore_entry_script_tags('app') }}
+            {% endblock %}
+        </div>
     </body>
 </html>

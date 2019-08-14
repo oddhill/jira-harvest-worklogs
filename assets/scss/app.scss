@@ -1,0 +1,12 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~chosen-js/chosen.css";
+
+.chosen-container {
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+
+  > * {
+    font-size: 13px;
+  }
+}

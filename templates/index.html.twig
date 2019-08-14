@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <form id="import-timesheets" action="/time-entries">
+    <div class="form-group row">
+      <label for="project" class="col-sm-1 col-form-label">Project</label>
+      <div class="col-sm-3">
+        <select data-placeholder="Loading projects..." class="form-control chosen-select" id="project" name="project" required disabled></select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="form-row">
+        <label for="from" class="col-sm-1 col-form-label">From</label>
+        <div class="col-sm-3">
+          <input type="date" class="form-control-sm" id="from" name="from" value="{{ last_week }}" max="{{ today }}" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="to" class="col-sm-1 col-form-label">To</label>
+        <div class="col-sm-3">
+          <input type="date" class="form-control-sm" id="to" name="to" value="{{ yesterday }}" max="{{ today }}" required>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="submit" data-loading-text="<span class='spinner-border spinner-border-sm'></span> Loading..." data-waiting-text="Import">Import</button>
+  </form>
+
+  <div id="results"></div>
+{% endblock %}

@@ -36,7 +36,7 @@ class JiraController extends AbstractController
         'generalPages' => [
           [
             'url' => '/main',
-            'key' => 'harvest.worklogs.main',
+            'key' => 'main',
             'location' => 'system.top.navigation.bar',
             'name' => [
               'value' => 'Harvest worklogs',

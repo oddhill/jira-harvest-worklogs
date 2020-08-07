@@ -60,7 +60,7 @@ $(document).ready(function() {
 
         AP.require('request', function(request) {
           request({
-            url: '/rest/api/latest/issue/' + issueKey  + '/worklog',
+            url: '/rest/api/3/issue/' + issueKey  + '/worklog',
             type: 'GET',
             contentType: 'application/json',
             success: function(response) {

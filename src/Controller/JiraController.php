@@ -30,7 +30,7 @@ class JiraController extends AbstractController
       'lifecycle' => [
         'installed' => '/jira-connect/installed',
       ],
-      'scopes' => ['READ', 'WRITE', 'ACT_AS_USER'],
+      'scopes' => ['READ', 'WRITE', 'DELETE', 'ACT_AS_USER'],
       'apiVersion' => 1,
       'modules' => [
         'generalPages' => [

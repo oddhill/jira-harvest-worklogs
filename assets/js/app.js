@@ -115,6 +115,32 @@ $(document).ready(function() {
                   });
                 }
               });
+
+              $.each(existingWorkLogs, function(harvestID, worklog) {
+                  let exists = false;
+
+                  $.each(entries, function(index, entry) {
+                    if (entry.id == harvestID) {
+                      exists = true;
+                      return false;
+                    }
+                  });
+
+                  if (!exists) {
+                    AP.require('request', function (request) {
+                      request({
+                        url: '/rest/api/latest/issue/' + issueKey + '/worklog/' + worklog.id,
+                        type: 'DELETE',
+                        success: function (response) {
+                          console.log(response);
+                        },
+                        error: function () {
+                          console.log(arguments);
+                        }
+                      });
+                    });
+                  }
+              });
             },
             error: function() {
               console.log(arguments);

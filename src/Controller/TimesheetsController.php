@@ -34,7 +34,7 @@ class TimesheetsController extends AbstractController
       $matches = [];
       preg_match('/[A-Z]+-[0-9]+/ui', $entry->notes, $matches);
 
-      if (isset($matches[0])) {
+      if (isset($matches[0]) && !$entry->is_running) {
         $response[$matches[0]][] = [
           'id' => $entry->id,
           'date' => date('Y-m-d\TH:i:s.000O', strtotime($entry->spent_date)),

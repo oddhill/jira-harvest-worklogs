@@ -40,10 +40,7 @@ class TimesheetsController extends AbstractController
           'date' => date('Y-m-d\TH:i:s.000O', strtotime($entry->spent_date)),
           'seconds' => $entry->hours * (60 * 60),
           'notes' => $entry->notes,
-          'user' => [
-            'id' => $entry->user->id,
-            'name' => $entry->user->name,
-          ],
+          'user' => $entry->user->name,
         ];
       }
     }
